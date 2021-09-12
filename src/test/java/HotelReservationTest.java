@@ -21,24 +21,22 @@ public class HotelReservationTest {
     }
 
     @Test
-    public void testForcheapestHotelWithinADateRange() {
+    public void toAddHotelHotel_withRegular_WeekendAndWeekday_Should_returnTrue() {
         HotelReservationSystem service = new HotelReservationSystem();
-        Hotel hotel1 = new Hotel("Lakewood", 110);
-        Hotel hotel2 = new Hotel("Bridgewood", 150);
-        Hotel hotel3 = new Hotel("Ridgewood", 220);
+        Hotel hotel1 = new Hotel("Lakewood", 110, 90);
+        Hotel hotel2 = new Hotel("Bridgewood", 150, 50);
+        Hotel hotel3 = new Hotel("Ridgewood", 220, 150);
         service.addHotel(hotel1);
         service.addHotel(hotel2);
         service.addHotel(hotel3);
-        Date start = null;
-        Date end = null;
-        try {
-            start = (Date) new SimpleDateFormat("ddMMMyyyy").parse("10Sep2020");
-            end = (Date) new SimpleDateFormat("ddMMMyyyy").parse("11Sep2020");
-            Hotel hotel = service.findCheapestHotel(start, end);
-            Assertions.assertEquals("Lakewood", hotel.getHotelName());
-        } catch (Exception e) {
+        try{
+            boolean checkIfAdded = service.addHotel(hotel1);
+            Assertions.assertEquals(checkIfAdded, true);
+            System.out.println(hotel1);
+        }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
     }
 
 }
