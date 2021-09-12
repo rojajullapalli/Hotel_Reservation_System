@@ -2,17 +2,10 @@ public class Hotel {
     private String hotelName;
     private int regularCustomerRate;
     private int totalRate;
-    private String startDate, endDate;
 
     public Hotel(String hotelName, int regularCustomerRate) {
         this.hotelName = hotelName;
         this.regularCustomerRate = regularCustomerRate;
-    }
-    public Hotel(String hotelName, int rate, String startDate, String endDate) {
-        this.hotelName = hotelName;
-        this.totalRate = rate;
-        this.startDate = startDate;
-        this.endDate = endDate;
     }
 
     public String getHotelName() {
@@ -30,6 +23,7 @@ public class Hotel {
     public void setRegularCustomerRate(int rate) {
         this.regularCustomerRate = rate;
     }
+
     public long getTotalRate() {
         return totalRate;
     }
@@ -37,6 +31,7 @@ public class Hotel {
     public void setTotalRate(int rate) {
         this.totalRate = rate;
     }
+
     @Override
     public String toString() {
         return "\nHotel Name: " + hotelName + "\nHotel rates for a regular customer (per day): " + regularCustomerRate
